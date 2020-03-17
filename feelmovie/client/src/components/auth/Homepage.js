@@ -10,17 +10,23 @@ export default (props) => {
       {props.user._id ? (
         <Redirect to="/profile" />
       ) : (
-        <Popin one={(
+    
           <>
-            <h1>IronProfile</h1>
-            <p>Today we will create an app with authorization, adding some cool styles !</p>
+           <div className="homepage"> 
+        <h1>iFeelMovie</h1>
+        <h2>Le film selon ton mood !</h2>
+        <p>
+        <Link className="btn" to="/signup">Sign up</Link>
+       </p>
+        <p>
+        <Link className="btn" to="/login">Log in</Link>
+       </p>
+      
 
-            <div className="cta">
-              <Link className="btn" to="/signup">Sign up</Link>
-              <Link className="btn" to="/login">Log in</Link>
-            </div>
+     </div>
+    
           </>
-        )} />
+        
       )}
     </>
   );
