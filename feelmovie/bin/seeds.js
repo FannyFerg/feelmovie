@@ -3,9 +3,9 @@ require('dotenv').config({
 });
 
 const mongoose = require('mongoose');
-const Movie = require('../models/movies');
+const Movie = require('../models/Movie');
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect('mongodb://localhost/feelmovie');
 const movieList = [{
   "Title": "Days of Thunder",
   "Year": "1990",

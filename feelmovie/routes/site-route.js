@@ -7,13 +7,14 @@ router.get('/', (req, res, next) => {
   res.json({message:'welcome sur la homepage'});
 });
 
-router.get("/login", (req, res, next) => {
-  res.json("auth/login");
-});
 
-router.get("/profiluser", (req, res, next) => {
+
+router.get("/home", (req, res, next) => {
   res.json({message:'welcome sur ton profil'});
 });
+
+
+
 
 
 

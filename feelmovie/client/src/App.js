@@ -7,8 +7,8 @@ import Homepage from './components/auth/Homepage.js'
 import Signup from './components/auth/Signup.js';
 import Login from './components/auth/Login.js';
 import Profile from './components/auth/Profile.js';
-
 import authService from './components/auth/auth-service.js';
+import Home from './components/Home.js';
 
 class App extends Component {
   state = {
@@ -55,7 +55,10 @@ class App extends Component {
             <Route exact path="/profile" render={(props) => (
               <Profile user={this.state.user} updateUser={this.updateUser} history={props.history} />
             )} />
-
+            <Route exact path="/home" render={(props) => (
+              <Home user={this.state.user} updateUser={this.updateUser} history={props.history} />
+      
+            )} />
             {/* last route, ie: 404 */}
             <Route render={() => (<h1>Not Found</h1>)} />
           </Switch>
