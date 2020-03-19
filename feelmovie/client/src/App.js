@@ -9,6 +9,8 @@ import Login from './components/auth/Login.js';
 import Profile from './components/auth/Profile.js';
 import authService from './components/auth/auth-service.js';
 import Home from './components/Home.js';
+import Test from './components/Test';
+import Movielist from './components/Movielist';
 
 class App extends Component {
   state = {
@@ -59,9 +61,17 @@ class App extends Component {
               <Home user={this.state.user} updateUser={this.updateUser} history={props.history} />
       
             )} />
+            <Route exact path="/test" render={(props) => (
+              <Test user={this.state.user} updateUser={this.updateUser} history={props.history} />
+      
+            )} />
+            <Route exact path="/movies" component={Movielist} />
             {/* last route, ie: 404 */}
             <Route render={() => (<h1>Not Found</h1>)} />
           </Switch>
+          <footer>
+            <p>&copy; Fanny Fergé</p>
+          </footer>
         </div>
       )} />
     );

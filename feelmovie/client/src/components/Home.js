@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 
@@ -11,7 +11,7 @@ class Home extends Component {
           Bonjour {this.props.user.username} !
         </p>
         
-        <Link className="btn" to="/test">Log in</Link>
+        <Link className="btn" to="/test">  c'est quoi ton mood</Link>
         </div>
       )
   }}

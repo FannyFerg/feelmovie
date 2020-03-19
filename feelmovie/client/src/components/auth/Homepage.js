@@ -12,7 +12,7 @@ export default (props) => {
     
           <>
        <div className="homepage">
-
+        <main>
          <header className="P1">
          
          <img src="../../../public/images/Logohomepage.png" className="logohomepage" />
@@ -51,7 +51,7 @@ export default (props) => {
 
 
        </section>
-
+       </main>
      </div>
     
           </>
