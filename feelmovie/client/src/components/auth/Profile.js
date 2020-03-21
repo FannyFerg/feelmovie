@@ -2,6 +2,7 @@ import React from 'react';
 
 import authService from './auth-service.js';
 import { Redirect } from 'react-router-dom';
+import Search from '../Search.js';
 
 export default class extends React.Component {
 
@@ -36,7 +37,7 @@ export default class extends React.Component {
               <p>
                  Bonjour {this.props.user.username} !
               </p>
-    
+              <Search/>
               <div className="cta">
                 <button className="btn logout" onClick={this.logout}>Logout</button>
               </div>

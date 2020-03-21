@@ -17,7 +17,7 @@ const movieSchema = new Schema(
     Country: String,
     Awards:String,
     Poster:{ type:String, default: 'https://www.sciencesetavenir.fr/assets/img/2016/03/09/cover-r4x3w1000-57df40df2241f-les-signes-de-la-douleur-chez-le-chat.jpg'},
-    
+    comment:String,
   }
 )
 

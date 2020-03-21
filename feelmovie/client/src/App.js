@@ -9,8 +9,9 @@ import Login from './components/auth/Login.js';
 import Profile from './components/auth/Profile.js';
 import authService from './components/auth/auth-service.js';
 import Home from './components/Home.js';
-import Test from './components/Test';
-import Movielist from './components/Movielist';
+import Test from './components/Test.js';
+import Movielist from './components/Movielist.js';
+import Moviedetails from './components/Moviedetails.js';
 
 class App extends Component {
   state = {
@@ -66,9 +67,13 @@ class App extends Component {
       
             )} />
             <Route exact path="/movies" component={Movielist} />
+
+            <Route exact path="/movies/:id" component={Moviedetails} />
+            
             {/* last route, ie: 404 */}
             <Route render={() => (<h1>Not Found</h1>)} />
           </Switch>
+
           <footer>
             <p>&copy; Fanny Fergé</p>
           </footer>

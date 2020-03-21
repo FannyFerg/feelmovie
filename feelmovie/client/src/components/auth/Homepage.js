@@ -7,7 +7,7 @@ export default (props) => {
   return (
     <>
       {props.user._id ? (
-        <Redirect to="/home" />
+        <Redirect to="/profile" />
       ) : (
     
           <>

@@ -10,7 +10,9 @@ class Movielist extends Component {
   componentDidMount() {
     axios.get('http://localhost:5000/movies')
       .then(response => response.data)
-      .then(data => this.setState({movies: data}))
+      .then(data =>{console.log('data',data);
+      this.setState({movies: data})
+    })
       .catch(err => err => console.log(err))
   }
   render(){
@@ -22,7 +24,7 @@ class Movielist extends Component {
             <li key={movie._id}>
               <img src={movie.Poster} alt="" />
               <div>
-                <strong><Link to={`/movie/${movie._id}`}>{movie.title}</Link></strong>
+                <strong><Link to={`/movies/${movie._id}`}>{movie.Title}</Link></strong>
               </div>
             </li>
           ))}

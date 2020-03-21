@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const Movie = require('../models/movies.js');
+const Movie = require('../models/Movie.js');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -40,15 +40,27 @@ router.get('/movies', (req, res, next) => {
       
       )
 
-        console.log(randomMovies);
+  
         
-      res.json({message:{movies:randomMovies}})
+      res.json(randomMovies)
     })
     .catch(next);
     
   })
 
+  router.get('/movies/:id', (req, res, next) => {
+    const id = req.params.id;
+  
+    Movie.findById(id)
+      .then(movie => {
+        
+        res.json(movie); //  des données a cette object 
+      })
+      .catch(next)
+  })
 
 router.get("/test", (req, res, next) => {
   res.json("Test");
 });
+
+module.exports = router
