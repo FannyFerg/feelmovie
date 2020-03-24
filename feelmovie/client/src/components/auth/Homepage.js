@@ -1,7 +1,6 @@
 import React from 'react';
-
 import {Link, Redirect} from 'react-router-dom';
-
+import Bonus from './Bonus.js';
 
 export default (props) => {
   return (
@@ -22,6 +21,7 @@ export default (props) => {
                 <p>
                 <Link className="btn" to="/login">Log in</Link>
                </p>
+              <Bonus/>
         </header> 
       
        <section className="contenu">

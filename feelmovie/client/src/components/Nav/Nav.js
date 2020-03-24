@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { Link } from 'react-router-dom';
+import Card from './Card.js'
 class Nav extends Component {
 
   render() {
@@ -7,7 +8,7 @@ class Nav extends Component {
 
   <div className="nav-bar">
                 <div>
-                    <div><link to="/home"><img src="../../public/images/info.png" className="menu" /></link></div>
+                 <Card/>
                     <div><img src="../../public/images/Logohomepage.png" className="logo" /></div>
                </div>
   </div>

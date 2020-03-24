@@ -21,7 +21,9 @@ class Moviedetails extends Component {
   render(){
     const movie = this.state.movie;
     console.log(this.props)
+    const {id} = this.props;
     return (
+      
       
 <div className="detailsm">
 
@@ -32,10 +34,18 @@ class Moviedetails extends Component {
    </div>
 
     <section>
+    <p>Director: {movie.Director}</p>
     <p>Resum: {movie.Plot}</p>
     <p>Duration : {movie.Runtime}</p>
     <p>Awards : {movie.Awards}</p>
     </section>
+
+    <div className="control">
+          <button className="button is-info">
+            +
+          </button>
+          <p>Ajouter à ma liste</p>
+        </div>
 </div>
     
     )}}

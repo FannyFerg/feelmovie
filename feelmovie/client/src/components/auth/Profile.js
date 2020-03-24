@@ -3,6 +3,9 @@ import React from 'react';
 import authService from './auth-service.js';
 import { Redirect } from 'react-router-dom';
 import Search from '../Search.js';
+import Addmovie from '../Liste.js';
+import Nav from '../Nav/Nav.js'
+
 
 export default class extends React.Component {
 
@@ -32,12 +35,14 @@ export default class extends React.Component {
           <Redirect to="/" />
         ) : (
             <>
+            <Nav/>
               <h1>Profile</h1>
               
               <p>
                  Bonjour {this.props.user.username} !
               </p>
               <Search/>
+              <Addmovie/>
               <div className="cta">
                 <button className="btn logout" onClick={this.logout}>Logout</button>
               </div>
