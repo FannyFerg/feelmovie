@@ -9,38 +9,54 @@ class Search extends Component {
   }
 
   getInfo = () => {
-    axios.get(`http://localhost:5000/movies`)
-    .then(response => response.data)
-    .then(data =>{console.log('data',data);
-    this.setState({movies: data})
+    axios.get(`http://localhost:5000/search`)
+      .then(response => response.data)
+      .then(data => {
+        console.log('data',data);
+        this.setState({ results: data });
   })
     .catch(err => err => console.log(err))
   }
 
 
-  handleInputChange = () => {
+  handleInputChange = (event) => {
     this.setState({
-      query: this.search.value
-    },() => {
-      if (this.state.query && this.state.query.length > 1) {
-        if (this.state.query.length % 2 === 0) {
+        query: event.target.value
+      }, () => {
+        if (this.state.query && this.state.query.length > 1) {
           this.getInfo()
-        }
-      } 
-    }
-  )
+        } 
+      }
+    )
   }
- 
+
+  // searchFilterMovie(movie) {
+  //   return movie.Title
+  //     .toLowerCase()
+  //     .includes(this.state.handleInputChange.toLowerCase());
+  // }
+
   render() {
     return (
+      <div>
       <form>
         <input
           placeholder="Film recherché..."
-          ref={input => this.search = input}
-          onChange={this.handleInputChange}
+          onChange={event => this.handleInputChange(event)}
         />
-         <Suggestion results={this.state.results} />
+         {/* <Suggestion results={this.state.results} /> */}
       </form>
+      {this.state.results
+        .filter(this.searchFilterMovie.bind(this))
+        .map(movie => {
+          return (
+            <Suggestion
+              key={movie._id}
+              name={movie.Title}
+            
+            />
+          );
+         })}</div>
     )
   }
  }

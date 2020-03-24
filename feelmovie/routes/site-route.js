@@ -63,4 +63,15 @@ router.get("/test", (req, res, next) => {
   res.json("Test");
 });
 
+router.get('/search', (req, res, next) => {
+ 
+  Movie.find()
+      .then(movie => {
+        
+        res.json(movie); //  des données a cette object 
+      })
+      .catch(next)
+  
+})
+
 module.exports = router
