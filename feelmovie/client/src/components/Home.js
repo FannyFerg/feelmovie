@@ -9,11 +9,17 @@ class Home extends Component {
       return (
         <div className='Home'>
         <Nav/>
-        <p>
+
+        <div className='intro'>
+         <h1>
           Bonjour {this.props.user.username} !
-        </p>
-        
-        <Link className="btn" to="/test">  c'est quoi ton mood</Link>
+        </h1>
+         <h2>Comment vous sentez-vous aujourd'hui ?</h2>
+
+        <Link className="btn" to="/test"> Mood</Link>
+        </div>
+
+        <div className='a'>OOOOOOO</div>
         </div>
       )
   }}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Link} from 'react-router-dom';
-
+import Logonav from '../../images/Logonav.png'
 import authService from './auth-service.js';
 
 export default class extends React.Component {
@@ -35,21 +35,24 @@ export default class extends React.Component {
     console.log(process.env.REACT_APP_APIURL)
     return (
     <div className="Login">
-  
+
+    <img src={Logonav} alt='logo' className='logologin'/>
+    
+    <div className='log'>
     <form onSubmit={this.handleSubmit}>
      
-     <h1>Login</h1>
+     <h1>S'identifer</h1>
     
       <p>
         <label>
-        <em>Username</em>
+        <em>Identifiant</em>
         <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
         </label>            
       </p>
      
       <p>
         <label>
-        <em>Password</em>
+        <em>Mot de passe</em>
         <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
         </label>
       </p>
@@ -58,15 +61,17 @@ export default class extends React.Component {
     
     
       <p>
-        <button className="btn" onClick={this.handleSubmit}>Login</button>
+        <button className="btn" onClick={this.handleSubmit}>Valider</button>
       </p>
      
     
+      <p className='note'>
+         <small>si vous n'avez pas de compte , vous pouvez vous inscrire <Link to="/signup" className='ici'>ici</Link></small>
+      </p>
+
       </form>
+      </div>
     
-        <p>
-         <small>If you dont  have an account, you can sign up from <Link to="/signup">here</Link></small>
-       </p>
       </div>)
   }
 }

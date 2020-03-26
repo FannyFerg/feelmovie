@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Link} from 'react-router-dom';
-
+import Logonav from '../../images/Logonav.png'
 import authService from './auth-service.js';
 
 export default class extends React.Component {
@@ -45,9 +45,12 @@ export default class extends React.Component {
     console.log()
     return (
       <div className="Signup">
-      <h1>Signup</h1>
+     
+      <img src={Logonav} alt='logo' className='logologin'/>
 
+      <div className='siup'>
       <form onSubmit={this.handleSubmit}>
+      <h1>S'inscrire</h1>
       
       {this.state.error && (
               <p className="error">{this.state.error}</p>
@@ -56,14 +59,14 @@ export default class extends React.Component {
       
         <p>
           <label>
-          <em>Username</em>
+          <em>Identifiant</em>
           <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
           </label>            
         </p>
        
         <p>
           <label>
-          <em>Password</em>
+          <em>Mot de passe</em>
           <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
           </label>
         </p>
@@ -79,15 +82,16 @@ export default class extends React.Component {
        
       
         <p>
-          <button className="btn" onClick={this.handleSubmit}>Signup</button>
+          <button className="btn" onClick={this.handleSubmit}>Valider</button>
         </p>
        
-      
-        </form>
-      
-          <p>
-           <small>you  have an account ? <Link to="/login">here</Link></small>
+        <p className='note'>
+           <small>Vous avez un compte  ? <Link to="/login" className='ici'>ici</Link></small>
          </p>
+
+        </form>
+        </div>
+    
         </div>
     );
   }

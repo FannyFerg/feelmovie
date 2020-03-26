@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import authService from '../auth/auth-service.js';
 import {Link} from 'react-router-dom';
+import menu from '../../images/menu.png'
 
 class Card extends Component {
   constructor() {
@@ -45,9 +46,9 @@ class Card extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.showMenu}>
-        <img src="../../public/images/Logohomepage.png" className="logo" />
+      <div className='card'>
+        <button onClick={this.showMenu} className='btnNav'>
+        <img src={menu} alt='logo' className="logomenu" />
         </button>
         
         {
@@ -59,9 +60,9 @@ class Card extends Component {
                   this.dropdownMenu = element;
                 }}
               >
-                <button><Link to={`/home`}>Page d'accueil</Link></button>
-                <button> <Link to={`/profile`}>Profile</Link></button>
-                <button className="btn logout" onClick={this.logout}>Logout</button>
+                <button className='btnburger'><Link to={`/home`} >Page d'accueil </Link></button>
+                <button className='btnburger'> <Link to={`/profile`}>Profile</Link></button>
+                <button className='btnburger' onClick={this.logout}>Logout</button>
               </div>
             )
             : (

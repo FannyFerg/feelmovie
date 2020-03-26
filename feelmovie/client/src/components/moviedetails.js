@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import {Link} from 'react-router-dom';
+import Nav from './Nav/Nav.js'
 
 class Moviedetails extends Component {
   state = {
@@ -26,26 +28,39 @@ class Moviedetails extends Component {
       
       
 <div className="detailsm">
+ <Nav/>
 
-<img src={movie.Poster} alt="" />
-   <div>
-   <h1>{movie.Title}</h1>
-   <h2>Director: {movie.Director}</h2>
+ <h1>{movie.Title}</h1>
+
+ <div className='propsmovie'>
+
+    <div className='imgmovie'>
+   <img src={movie.Poster} alt="" />
    </div>
 
-    <section>
-    <p>Director: {movie.Director}</p>
-    <p>Resum: {movie.Plot}</p>
-    <p>Duration : {movie.Runtime}</p>
+
+
+    <section className='section'>
+    <p>Résumé: {movie.Plot}</p>
+    <p>Durée : {movie.Runtime}</p>
     <p>Awards : {movie.Awards}</p>
     </section>
 
-    <div className="control">
+    
+    
+  </div>
+  <div className='retour'>
+  <Link className="btn" to="/movies"> Retour</Link>
+  </div>
+  <div className="control">
+ 
+
           <button className="button is-info">
             +
           </button>
           <p>Ajouter à ma liste</p>
-        </div>
+  </div>
+  <div className='a'>OOOOOOO</div>
 </div>
     
     )}}

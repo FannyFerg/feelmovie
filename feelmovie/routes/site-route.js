@@ -32,7 +32,7 @@ router.get('/movies', (req, res, next) => {
     .then(movies => {
       let selectedIndexes = [];
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 6; i++) {
         selectedIndexes.push(Math.floor(Math.random() * movies.length))
       }
       const randomMovies= movies.filter((movie, index) =>
